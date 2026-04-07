@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Energy Companion</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="top-header">
+      <div class="brand-section">
+        <div class="brand-icon">⚡</div>
+        <div>
+          <h1>Energy Companion</h1>
+          <p>A smart household dashboard for energy and water awareness</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="dark-toggle">
+          <label for="darkModeToggle">Dark mode</label>
+          <input type="checkbox" id="darkModeToggle" />
+        </div>
+        <button class="primary-btn">Connect Usage Data</button>
+      </div>
+    </header>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+    <nav class="nav-bar">
+      <button class="nav-btn active" data-tab="dashboard">Dashboard</button>
+      <button class="nav-btn" data-tab="insights">Insights</button>
+      <button class="nav-btn" data-tab="tips">Tips</button>
+      <button class="nav-btn" data-tab="challenge">Challenge</button>
+      <button class="nav-btn" data-tab="terms">Terms & Privacy</button>
+    </nav>
+
+    <!-- =========================
+         DASHBOARD TAB
+    ========================== -->
+    <section class="tab-content active" id="dashboard">
+      <div class="metrics-grid">
+
+        <div class="metric-card blue">
+          <div class="metric-top">
+            <div>
+              <p>Today's Energy</p>
+              <h2>18 kWh</h2>
+            </div>
+            <span class="metric-icon">📊</span>
+          </div>
+          <div class="metric-bottom">3 kWh above your normal daily average</div>
+        </div>
+
+        <div class="metric-card green">
+          <div class="metric-top">
+            <div>
+              <p>Today's Water</p>
+              <h2>248 L</h2>
+            </div>
+            <span class="metric-icon">💧</span>
+          </div>
+          <div class="metric-bottom">Higher than usual due to shower and laundry activity</div>
+        </div>
+
+        <div class="metric-card orange">
+          <div class="metric-top">
+            <div>
+              <p>Estimated Monthly Bill</p>
+              <h2>$118</h2>
+            </div>
+            <span class="metric-icon">💵</span>
+          </div>
+          <div class="metric-bottom">Projected from your current usage pattern</div>
+        </div>
+
+        <div class="metric-card purple">
+          <div class="metric-top">
+            <div>
+              <p>Suggested Action</p>
+              <h2>Set AC to 24°C</h2>
+            </div>
+            <span class="metric-icon">💡</span>
+          </div>
+          <div class="metric-bottom">Best quick action based on today's largest energy source</div>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="card large-card">
+          <div class="card-header">
+            <h3>Usage Snapshot</h3>
+            <p>See your daily summary and what is causing higher consumption.</p>
+          </div>
+
+          <div class="snapshot-grid">
+            <div class="inner-card">
+              <div class="status-row">
+                <div>
+                  <p class="small-label">Current status</p>
+                  <h4>Slightly above average</h4>
+                </div>
+                <span class="badge warning">Needs attention</span>
+              </div>
+
+              <p class="card-text">
+                Your energy use is mainly driven by cooling and water heating today.
+                A small change in those habits could lower both daily consumption
+                and your estimated bill.
+              </p>
+
+              <div class="progress-area">
+                <div class="progress-label">
+                  <span>Normal average</span>
+                  <span>15 kWh</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 72%;"></div>
+                </div>
+                <p class="save-text">Save around 6% to 10% with today's recommendation</p>
+              </div>
+            </div>
+
+            <div class="inner-card">
+              <h4>Top contributors today</h4>
+
+              <div class="contributors-list">
+                <div class="contributor-item">
+                  <div class="contributor-icon">🌬️</div>
+                  <div class="contributor-info">
+                    <div class="row-between">
+                      <strong>1. Air Conditioner</strong>
+                      <span>42%</span>
+                    </div>
+                    <p>Main energy driver today</p>
+                  </div>
+                </div>
+
+                <div class="contributor-item">
+                  <div class="contributor-icon">🔥</div>
+                  <div class="contributor-info">
+                    <div class="row-between">
+                      <strong>2. Water Heater</strong>
+                      <span>28%</span>
+                    </div>
+                    <p>High due to long shower usage</p>
+                  </div>
+                </div>
+
+                <div class="contributor-item">
+                  <div class="contributor-icon">🏠</div>
+                  <div class="contributor-info">
+                    <div class="row-between">
+                      <strong>3. Refrigerator</strong>
+                      <span>12%</span>
+                    </div>
+                    <p>Stable baseline consumption</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card side-card">
+          <div class="card-header">
+            <h3>Personal Goal</h3>
+            <p>Make the advice feel more specific to the user.</p>
+          </div>
+
+          <div class="goal-box">
+            <label for="goalInput">What do you want to improve?</label>
+            <input type="text" id="goalInput" value="Reduce electricity bill" />
+          </div>
+
+          <div class="info-box blue-box">
+            <h4>Smart recommendation</h4>
+            <p id="goalMessage">Cooling and hot water habits can reduce your bill fastest.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         INSIGHTS TAB
+    ========================== -->
+    <section class="tab-content" id="insights">
+      <div class="insights-grid">
+
+        <div class="card large-card">
+          <div class="card-header">
+            <h3>Weekly Energy Usage</h3>
+            <p>Clear trend view for the user's energy pattern across the week.</p>
+          </div>
+
+          <div class="chart-card">
+            <canvas id="energyLineChart"></canvas>
+          </div>
+        </div>
+
+        <div class="card side-card">
+          <div class="card-header">
+            <h3>Energy Breakdown</h3>
+            <p>Users asked to know what is using their energy.</p>
+          </div>
+
+          <div class="chart-card doughnut-wrap">
+            <canvas id="energyBreakdownChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="insights-grid second-row">
+        <div class="card">
+          <div class="card-header">
+            <h3>Weekly Water Usage</h3>
+            <p>Water is shown separately so users can connect habits to outcomes.</p>
+          </div>
+
+          <div class="chart-card">
+            <canvas id="waterBarChart"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Interpretation</h3>
+            <p>Translate numbers into plain language.</p>
+          </div>
+
+          <div class="info-box">
+            <h4>Peak day identified</h4>
+            <p>Friday shows the highest energy use, which may suggest longer time at home or heavier cooling usage before the weekend.</p>
+          </div>
+
+          <div class="info-box">
+            <h4>Water pattern</h4>
+            <p>Water use spikes on Friday too, which suggests showering, cleaning, and laundry happening on the same day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         TIPS TAB
+    ========================== -->
+    <section class="tab-content" id="tips">
+      <div class="tips-grid">
+
+        <div class="card tip-card">
+          <div class="tip-icon">🌬️</div>
+          <div>
+            <div class="tip-head">
+              <h3>Reduce AC to 24°C</h3>
+              <span class="badge success">High impact</span>
+            </div>
+            <p>Your air conditioning is the largest contributor today. Raising the set temperature slightly can reduce energy use while keeping the room comfortable.</p>
+            <div class="tip-actions">
+              <button class="primary-btn">Apply Tip</button>
+              <button class="secondary-btn">Learn More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card tip-card">
+          <div class="tip-icon">🚿</div>
+          <div>
+            <div class="tip-head">
+              <h3>Shorten shower by 2 minutes</h3>
+              <span class="badge success">Water + energy</span>
+            </div>
+            <p>Water heating and shower time are pushing your daily usage above average. A small reduction could lower both water and electricity usage.</p>
+            <div class="tip-actions">
+              <button class="primary-btn">Apply Tip</button>
+              <button class="secondary-btn">Learn More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card tip-card">
+          <div class="tip-icon">🧺</div>
+          <div>
+            <div class="tip-head">
+              <h3>Wash clothes with cold water</h3>
+              <span class="badge success">Easy win</span>
+            </div>
+            <p>Cold wash cycles can cut energy consumption from your laundry routine without changing your normal schedule too much.</p>
+            <div class="tip-actions">
+              <button class="primary-btn">Apply Tip</button>
+              <button class="secondary-btn">Learn More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card tip-card">
+          <div class="tip-icon">📺</div>
+          <div>
+            <div class="tip-head">
+              <h3>Turn off standby devices at night</h3>
+              <span class="badge success">Habit change</span>
+            </div>
+            <p>Entertainment devices are drawing background power. Switching them off fully can reduce wasted electricity.</p>
+            <div class="tip-actions">
+              <button class="primary-btn">Apply Tip</button>
+              <button class="secondary-btn">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         CHALLENGE TAB
+    ========================== -->
+    <section class="tab-content" id="challenge">
+      <div class="challenge-grid">
+
+        <div class="card challenge-card">
+          <div class="challenge-top green-line"></div>
+          <h3>Shorter Shower Challenge</h3>
+          <p class="challenge-type">Water challenge</p>
+
+          <div class="info-box">
+            <p class="small-label">Why this challenge?</p>
+            <p>Your water use is above average because shower time is high.</p>
+          </div>
+
+          <div class="challenge-block">
+            <p class="small-label">Action</p>
+            <p>Reduce shower time by 2 minutes for 5 days.</p>
+          </div>
+
+          <div class="challenge-block">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span>60%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill green-fill" style="width: 60%;"></div>
+            </div>
+          </div>
+
+          <div class="info-box blue-box">
+            <p><strong>Estimated savings:</strong> Save about 120L of water this week</p>
+          </div>
+
+          <div class="tip-actions">
+            <button class="primary-btn">Join Challenge</button>
+            <button class="secondary-btn">Track Progress</button>
+          </div>
+        </div>
+
+        <div class="card challenge-card">
+          <div class="challenge-top blue-line"></div>
+          <h3>Smarter Cooling Challenge</h3>
+          <p class="challenge-type">Energy challenge</p>
+
+          <div class="info-box">
+            <p class="small-label">Why this challenge?</p>
+            <p>Air conditioning is your biggest energy user today.</p>
+          </div>
+
+          <div class="challenge-block">
+            <p class="small-label">Action</p>
+            <p>Set AC to 24°C and use a fan for 4 evenings.</p>
+          </div>
+
+          <div class="challenge-block">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span>25%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 25%;"></div>
+            </div>
+          </div>
+
+          <div class="info-box blue-box">
+            <p><strong>Estimated savings:</strong> Reduce cooling use by around 8%</p>
+          </div>
+
+          <div class="tip-actions">
+            <button class="primary-btn">Join Challenge</button>
+            <button class="secondary-btn">Track Progress</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         TERMS TAB
+    ========================== -->
+    <section class="tab-content" id="terms">
+      <div class="terms-grid">
+        <div class="card">
+          <div class="card-header">
+            <h3>Terms and Conditions</h3>
+            <p>Educational prototype statement for the Energy Companion website.</p>
+          </div>
+
+          <ul class="terms-list">
+            <li>By accessing and using Energy Companion, users agree to follow these terms and conditions.</li>
+            <li>The system is designed to help households understand and manage energy and water consumption through simplified insights and recommendations.</li>
+            <li>The platform is for informational and educational purposes only and does not guarantee specific savings.</li>
+            <li>Users must provide accurate input data where applicable and must not misuse or disrupt the system.</li>
+            <li>Energy Companion does not provide real-time utility billing and does not replace official utility provider data.</li>
+            <li>All content, design, and features are part of a student project for educational use.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Privacy Policy</h3>
+            <p>Privacy-first summary with minimal data collection.</p>
+          </div>
+
+          <ul class="terms-list green-dots">
+            <li>Energy Companion follows a privacy-first approach and collects only the minimum data needed to generate useful insights.</li>
+            <li>The system may collect household energy usage, water usage, and daily or weekly usage patterns.</li>
+            <li>The system does not collect personal identifiers such as name, address, or phone number.</li>
+            <li>Data may be stored locally in the user's browser and is not shared with third parties.</li>
+            <li>Users can clear stored data, stop using the system at any time, and disable optional tracking features.</li>
+            <li>As this is a prototype, basic security measures are used, but production-level security is not guaranteed.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card contact-card">
+        <div>
+          <h3>Contact the project team</h3>
+          <p>For questions about terms, privacy, or prototype use, users can contact the team through the project support channel.</p>
+        </div>
+        <button class="primary-btn">Contact Team</button>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Chart.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Your custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
